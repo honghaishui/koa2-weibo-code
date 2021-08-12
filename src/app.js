@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-08-12 09:54:34
+ * @LastEditTime: 2021-08-12 13:43:27
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \koa2-weibo-code\src\app.js
+ */
 const Koa = require('koa')
 const app = new Koa()
 const views = require('koa-views')
@@ -25,12 +33,12 @@ app.use(views(__dirname + '/views', {
 }))
 
 // logger
-app.use(async (ctx, next) => {
-  const start = new Date()
-  await next()
-  const ms = new Date() - start
-  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
-})
+// app.use(async (ctx, next) => {
+//   const start = new Date()
+//   await next()
+//   const ms = new Date() - start
+//   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
+// })
 
 // routes
 app.use(index.routes(), index.allowedMethods())

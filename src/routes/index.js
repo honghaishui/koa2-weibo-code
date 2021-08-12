@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-08-12 09:54:34
+ * @LastEditTime: 2021-08-12 13:55:23
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \koa2-weibo-code\src\routes\index.js
+ */
 const router = require('koa-router')()
 
 router.get('/', async (ctx, next) => {
@@ -15,5 +23,14 @@ router.get('/json', async (ctx, next) => {
     title: 'koa2 json'
   }
 })
+
+router.get('/profile/:userName', async (ctx, next) => {
+  const { userName } = ctx.params
+  ctx.body = {
+    title: 'koa2 profile',
+    userName: userName
+  }
+})
+
 
 module.exports = router
