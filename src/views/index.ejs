@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-12 09:54:34
+ * @LastEditTime: 2021-08-13 14:10:26
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \koa2-weibo-code\src\views\index.ejs
+-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,5 +15,11 @@
   <body>
     <h1><%= title %></h1>
     <p>EJS Welcome to <%= title %></p>
+    <%- include('widgets/user-info', {
+      isMe
+    }) %>
+    <%- include('widgets/blog-list', {
+      blogList
+    }) %>
   </body>
 </html>
